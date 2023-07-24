@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.7.1/slick.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.7.1/slick-theme.css">
+
+    <title>Document</title>
+</head>
+
+<body>
+
+    <!-- O COMERCIAL É O RESIDENCIAL  -->
+
+
+
+    <div class="slider">
+
+        <div class="mode-buttons">
+            <div class="btn-container">
+                <button onclick="showComercial()">RESIDENCIAL</button>
+                <button onclick="showResidencial()">EMPRESARIAL</button>
+            </div>
+
+        </div>
+
+
+
+        <!-- Slider for Comercial -->
+        <div class="slides comercial">
+
+            <div class="carousel-comercial">
+                <div class="slide first">
+                    <img src="./assets/background1small.png" class="img-comercial" alt="">
+                </div>
+
+                <div class="slide">
+                    <img src="./assets/background2small.png" class="img-comercial" alt="">
+                </div>
+
+                <!-- <div class="slide slide-background3">
+                    <div class="background3resi">
+                        <h1>550 MEGA</h1>
+                        <div class="container-intern-card" id="parg-card">
+                            <p>Wi-fi Plus</p>
+                            <p>Fibra Óptica de<br>ponta a ponta</p>
+                            <p>Suporte 24h</p>
+                            <p>Sem franquia de<br>consumo mensal</p>
+                        </div>
+                        <div class="container-intern-card">
+                            <h1>R$ 101,90</h1>
+                            <button>ASSINE JÁ!</button>
+                        </div>
+                
+                    </div>
+                </div> -->
+
+                <div class="slide">
+                    <img src="./assets/background3small.png" class="img-comercial" alt="">
+                </div>
+            </div>
+
+
+        </div>
+
+        <!-- Slider for Residencial -->
+        <div class="slides residencial" style="display: none;">
+
+            <div class="carousel-empresarial">
+                <div class="slide first">
+                    <img src="./assets/background1big.png" class="img-empresarial" alt="">
+                </div>
+
+                <div class="slide">
+                    <img src="./assets/background2big.png" class="img-empresarial" alt="">
+                </div>
+
+                <div class="slide">
+                    <img src="./assets/background3big.png" class="img-empresarial" alt="">
+                </div>
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Roboto', sans-serif;
+        }
+
+
+        .slider {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+
+
+
+        }
+
+        img {
+            border-radius: 20px;
+        }
+
+        .img-comercial {
+            width: 300px;
+            height: 464px;
+            padding: 0 5px;
+        }
+
+        .img-empresarial {
+            width: 300px;
+            height: 611px;
+            padding: 0 5px;
+
+        }
+
+        .carousel-comercial {
+            display: flex;
+
+
+
+        }
+
+
+        .carousel-empresarial {
+            display: flex;
+        }
+
+
+
+        .btn-container {
+            display: flex;
+            width: 300px;
+            justify-content: space-between;
+
+            border-bottom: 2px solid red;
+        }
+
+        .btn-container button {
+            margin-bottom: 8px;
+            background: none;
+            border: none;
+            color: #979797;
+
+
+        }
+
+        .btn-container button.btn-active {
+            color: #C10000
+        }
+
+        .background3resi {
+            background-image: url(./assets/mega3residencial-background.png);
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            width: 300px;
+            height: 464px;
+            padding: 0 5px;
+            border-radius: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+
+        }
+
+        .container-intern-card{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #parg-card{
+            height: 200px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around !important;
+          
+        }
+
+    </style>
+
+    <script>
+
+        // Function to set initial button states
+        function setInitialButtonState() {
+            const btnResidencial = document.querySelector(".btn-container button:first-child");
+            const btnEmpresarial = document.querySelector(".btn-container button:last-child");
+
+            btnResidencial.classList.add("btn-active");
+            btnEmpresarial.classList.remove("btn-active");
+        }
+
+        // Function to handle button click events
+        function showComercial() {
+            document.querySelector(".slides.comercial").style.display = "block";
+            document.querySelector(".slides.residencial").style.display = "none";
+
+            const btnResidencial = document.querySelector(".btn-container button:first-child");
+            const btnEmpresarial = document.querySelector(".btn-container button:last-child");
+
+            btnResidencial.classList.add("btn-active");
+            btnEmpresarial.classList.remove("btn-active");
+        }
+
+        // Function to handle button click events
+        function showResidencial() {
+            document.querySelector(".slides.residencial").style.display = "block";
+            document.querySelector(".slides.comercial").style.display = "none";
+
+            const btnResidencial = document.querySelector(".btn-container button:first-child");
+            const btnEmpresarial = document.querySelector(".btn-container button:last-child");
+
+            btnResidencial.classList.remove("btn-active");
+            btnEmpresarial.classList.add("btn-active");
+        }
+
+        // Add event listeners to the buttons
+        document.querySelector(".btn-container button:first-child").addEventListener("click", showComercial);
+        document.querySelector(".btn-container button:last-child").addEventListener("click", showResidencial);
+
+        // Set the initial button state when the page loads
+        window.addEventListener("load", setInitialButtonState);
+
+    </script>
+
+</body>
+
+</html>
