@@ -39,7 +39,7 @@
             <div class="carousel-comercial">
                 <div class="slide slide-background3">
                     <div class="backgroundresi bac1">
-                        <h1>250 MEGA</h1>
+                        <h1 class="main-title">250 MEGA</h1>
                         <div class="container-intern-card parg-card" >
                             <div><p>Wi-fi Plus</p></div>
                             <div><p>Fibra Óptica de<br>ponta a ponta</p></div>
@@ -56,7 +56,7 @@
 
                 <div class="slide slide-background3">
                     <div class="backgroundresi bac2">
-                        <h1>450 MEGA</h1>
+                        <h1 class="main-title">450 MEGA</h1>
                         <div class="container-intern-card parg-card" >
                             <div><p>Wi-fi Plus</p></div>
                             <div><p>Fibra Óptica de<br>ponta a ponta</p></div>
@@ -73,7 +73,7 @@
 
                 <div class="slide slide-background3">
                     <div class="backgroundresi">
-                        <h1>550 MEGA</h1>
+                        <h1 class="main-title">550 MEGA</h1>
                         <div class="container-intern-card parg-card" >
                             <div><p>Wi-fi Plus</p></div>
                             <div><p>Fibra Óptica de<br>ponta a ponta</p></div>
@@ -98,8 +98,8 @@
             <div class="carousel-empresarial">
                 <div class="slide slide-background3">
                     <div class="backgroundresi back-empresa-1 empresa">
-                        <h1>550 MEGA</h1>
-                        <div class="container-intern-card parg-card" >
+                        <h1 class="main-title-emp">550 MEGA</h1>
+                        <div class="container-intern-card parg-card pag-maior" >
                             <div><p>Link dedicado</p></div>
                             <div><p>Wi-fi Plus</p></div>
                             <div><p>Fibra Óptica de<br>ponta a ponta</p></div>
@@ -110,7 +110,7 @@
                             <div><p>IP fixo e válido</p></div>
                         </div>
                         <div class="container-intern-card last-div">
-                            <button>CONSULTE JÁ!</button>
+                            <button class="btn-emp">CONSULTE JÁ!</button>
                         </div>
                 
                     </div>
@@ -118,8 +118,8 @@
 
                 <div class="slide slide-background3">
                     <div class="backgroundresi back-empresa-2 empresa">
-                        <h1>550 MEGA</h1>
-                        <div class="container-intern-card parg-card" >
+                        <h1 class="main-title-emp">550 MEGA</h1>
+                        <div class="container-intern-card parg-card pag-maior" >
                             <div><p>Link dedicado</p></div>
                             <div><p>Wi-fi Plus</p></div>
                             <div><p>Fibra Óptica de<br>ponta a ponta</p></div>
@@ -131,7 +131,7 @@
                         </div>
                         <div class="container-intern-card last-div">
                          
-                            <button>CONSULTE JÁ!</button>
+                            <button class="btn-emp">CONSULTE JÁ!</button>
                         </div>
                 
                     </div>
@@ -139,8 +139,8 @@
 
                 <div class="slide slide-background3">
                     <div class="backgroundresi back-empresa-3 empresa">
-                        <h1>550 MEGA</h1>
-                        <div class="container-intern-card parg-card" >
+                        <h1 class="main-title-emp">550 MEGA</h1>
+                        <div class="container-intern-card parg-card pag-maior" >
                             <div><p>Link dedicado</p></div>
                             <div><p>Wi-fi Plus</p></div>
                             <div><p>Fibra Óptica de<br>ponta a ponta</p></div>
@@ -152,14 +152,12 @@
                         </div>
                         <div class="container-intern-card last-div">
                         
-                            <button>CONSULTE JÁ!</button>
+                            <button class="btn-emp">CONSULTE JÁ!</button>
                         </div>
                 
                     </div>
                 </div>
             </div>
-
-
         </div>
 
 
@@ -267,6 +265,8 @@
         }
 
         .parg-card{
+    
+
             height: 200px;
             display: flex;
             flex-direction: column;
@@ -280,7 +280,7 @@
         .parg-card p{
             font-weight: 400;
             color:#fff;
-            font-size: 20px;
+            font-size: 35px;
 
         
           
@@ -290,7 +290,7 @@
 
         .parg-card div:not(:last-child){
             border-bottom: 2px rgb(255, 255, 255,0.8) solid;
-            width:15em;
+            width:min(18em, 300px);
             display: flex;
             justify-content: center;
             padding: 10px;
@@ -311,10 +311,10 @@
             background-color: #00FF38;
             border: none;
             border-radius: 4px;
-            width: 230px;
-            height: 50px;
+            width: 400px;
+            height: 80px;
             font-weight:900 ;
-            font-size: 20px;
+            font-size: 30px;
            
 
 
@@ -326,7 +326,19 @@
 
         h1{
             font-weight: 900;
-            font-size: 35px;
+            font-size: 50px;
+            
+        }
+
+        .main-title{
+            position: relative;
+            bottom: 26px;
+        }
+
+        .main-title-emp{
+            position: relative;
+            bottom: 50px;
+
         }
 
         .bac1{
@@ -354,18 +366,19 @@
 
         .back-empresa-1{
             background-image: url(./assets/background1big.png);
-            height: 611px;
+            height: 1018px;
         }
 
         .back-empresa-2{
             background-image: url(./assets/background2big.png);
-            height: 611px;
+            height: 1018px;
 
         }
         
         .back-empresa-3{
             background-image: url(./assets/background3big.png);
-            height: 611px;
+            height: 1018px;
+
 
         }
 
@@ -374,6 +387,24 @@
             flex-direction: column;
             gap: 80px;
         }
+
+        .pag-maior p{
+            font-size: 30px !important;
+            text-align: center;
+        }
+
+        .pag-maior div{
+            width: 400px !important;
+        }
+
+
+       
+
+        .btn-emp{
+            position: relative;
+            top: 30px;
+        }
+
 
 
     </style>
